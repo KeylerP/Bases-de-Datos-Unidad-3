@@ -1,0 +1,14 @@
+-- SQL Server SSMS / Visual Studio | consulta sin modificaciones
+USE [cea_bibliografia];
+GO
+SELECT DB_NAME() AS base_actual, ORIGINAL_LOGIN() AS usuario_conectado;
+GO
+SELECT TABLE_NAME AS tabla
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'dbo' AND TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_NAME;
+GO
+SELECT COUNT(*) AS total_tablas
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'dbo' AND TABLE_TYPE = 'BASE TABLE';
+GO
